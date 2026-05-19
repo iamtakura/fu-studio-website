@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import './App.css';
+import { asset } from './utils';
 import PackagesOverlay from './PackagesOverlay';
 import BookingDrawer from './BookingDrawer';
 import ConceptsGallery from './ConceptsGallery';
@@ -45,8 +46,8 @@ function App() {
         <section className="section-light py-section starter-package">
           <div className="container starter-grid">
             <div className="starter-images">
-              <img src="/portrait_studio_1779123157391.png" alt="Portrait Studio" style={{marginTop: '40px'}} />
-              <img src="/product_booth_1779123172675.png" alt="Product Booth" style={{marginBottom: '40px'}} />
+              <img src={asset('/portrait_studio_1779123157391.png')} alt="Portrait Studio" style={{marginTop: '40px'}} />
+              <img src={asset('/product_booth_1779123172675.png')} alt="Product Booth" style={{marginBottom: '40px'}} />
             </div>
             <div className="starter-content">
               <div className="price-anchor">
@@ -78,11 +79,11 @@ function App() {
               <h2 className="benefits-headline">Experience A Studio Session Out of This World</h2>
               <div className="benefits-tiles">
                 <div className="benefit-tile">
-                  <img src="/portrait_studio_1779123157391.png" alt="Benefit 1" />
+                  <img src={asset('/portrait_studio_1779123157391.png')} alt="Benefit 1" />
                   <div className="benefit-label">High Quality Professional Photos</div>
                 </div>
                 <div className="benefit-tile">
-                  <img src="/product_booth_1779123172675.png" alt="Benefit 2" />
+                  <img src={asset('/product_booth_1779123172675.png')} alt="Benefit 2" />
                   <div className="benefit-label">Diverse Backdrops to Fit Any Situation</div>
                 </div>
               </div>
@@ -130,9 +131,9 @@ function App() {
               </div>
 
               <div className="featured-setup">
-                <img src="/hero_studio_1779123142528.png" alt="Featured Setup" />
+                <img src={asset('/hero_studio_1779123142528.png')} alt="Featured Setup" />
                 <div className="focal-circle">
-                  <img src="/portrait_studio_1779123157391.png" alt="Spotlight" />
+                  <img src={asset('/portrait_studio_1779123157391.png')} alt="Spotlight" />
                 </div>
                 <div className="featured-content">
                   <h3>Premium Video Creation Suite</h3>
@@ -174,7 +175,7 @@ function App() {
             
             <div className="essentials-grid">
               <div className="essential-card">
-                <img src="/salon_prep_1779123187117.png" alt="Salon" />
+                <img src={asset('/salon_prep_1779123187117.png')} alt="Salon" />
                 <div className="essential-content">
                   <div>
                     <h3>On-Site Support Salon</h3>
@@ -185,7 +186,7 @@ function App() {
               </div>
 
               <div className="essential-card">
-                <img src="/hero_studio_1779123142528.png" alt="Equipment" />
+                <img src={asset('/hero_studio_1779123142528.png')} alt="Equipment" />
                 <div className="essential-content">
                   <div>
                     <h3>Equipment & Accessory Add-ons</h3>

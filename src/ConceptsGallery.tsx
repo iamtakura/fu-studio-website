@@ -1,17 +1,18 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { asset } from './utils';
 
 const concepts = [
-  { id: 1, title: 'The Minimalist Void', src: '/concepts/concept_01_void_1779125188313.png', aspect: 'portrait' },
-  { id: 2, title: 'Warm Ambient Lounge', src: '/concepts/concept_02_lounge_1779125204908.png', aspect: 'landscape' },
-  { id: 3, title: 'Neon Cyber-Grid', src: '/concepts/concept_03_cyber_1779125222410.png', aspect: 'portrait' },
-  { id: 4, title: 'Y2K Pop', src: '/concepts/concept_04_y2k_1779125239918.png', aspect: 'landscape' },
-  { id: 5, title: 'The Executive Slate', src: '/concepts/concept_05_slate_1779125258072.png', aspect: 'portrait' },
-  { id: 6, title: 'Botanical Oasis', src: '/concepts/concept_06_oasis_1779125281438.png', aspect: 'landscape' },
-  { id: 7, title: 'Urban Raw', src: '/concepts/concept_07_urban_1779125296923.png', aspect: 'portrait' },
-  { id: 8, title: 'Abstract Geometry', src: '/concepts/concept_08_geometry_1779125313379.png', aspect: 'landscape' },
-  { id: 9, title: 'Fine Art Canvas', src: '/concepts/concept_09_canvas_1779125330827.png', aspect: 'portrait' },
-  { id: 10, title: 'The Product Podium', src: '/concepts/concept_10_podium_1779125348601.png', aspect: 'landscape' }
+  { id: 1, title: 'The Minimalist Void', src: asset('/concepts/concept_01_void_1779125188313.png'), aspect: 'portrait' },
+  { id: 2, title: 'Warm Ambient Lounge', src: asset('/concepts/concept_02_lounge_1779125204908.png'), aspect: 'landscape' },
+  { id: 3, title: 'Neon Cyber-Grid', src: asset('/concepts/concept_03_cyber_1779125222410.png'), aspect: 'portrait' },
+  { id: 4, title: 'Y2K Pop', src: asset('/concepts/concept_04_y2k_1779125239918.png'), aspect: 'landscape' },
+  { id: 5, title: 'The Executive Slate', src: asset('/concepts/concept_05_slate_1779125258072.png'), aspect: 'portrait' },
+  { id: 6, title: 'Botanical Oasis', src: asset('/concepts/concept_06_oasis_1779125281438.png'), aspect: 'landscape' },
+  { id: 7, title: 'Urban Raw', src: asset('/concepts/concept_07_urban_1779125296923.png'), aspect: 'portrait' },
+  { id: 8, title: 'Abstract Geometry', src: asset('/concepts/concept_08_geometry_1779125313379.png'), aspect: 'landscape' },
+  { id: 9, title: 'Fine Art Canvas', src: asset('/concepts/concept_09_canvas_1779125330827.png'), aspect: 'portrait' },
+  { id: 10, title: 'The Product Podium', src: asset('/concepts/concept_10_podium_1779125348601.png'), aspect: 'landscape' }
 ];
 
 const ParallaxImage = ({ concept }: { concept: typeof concepts[0] }) => {

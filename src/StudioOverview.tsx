@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { asset } from './utils';
 
 const StudioOverview = () => {
   const ref = useRef(null);
@@ -23,7 +24,7 @@ const StudioOverview = () => {
         <div className="overview-right">
           <div className="overview-image-wrapper" ref={ref}>
             <motion.img 
-              src="/portrait_studio_1779123157391.png" 
+              src={asset('/portrait_studio_1779123157391.png')} 
               alt="Active Photoshoot" 
               className="overview-image"
               style={{ y }}

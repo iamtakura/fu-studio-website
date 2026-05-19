@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { asset } from './utils';
 
 interface HeroProps {
   onBookClick: () => void;
@@ -56,7 +57,7 @@ const Hero = ({ onBookClick }: HeroProps) => {
         <div className="hero-right-new">
           <div className="hero-image-wrapper">
             <div className="hero-image-mask"></div>
-            <img src="/hero_studio_1779123142528.png" alt="Professional Camera Rig" className="hero-visual" />
+            <img src={asset('/hero_studio_1779123142528.png')} alt="Professional Camera Rig" className="hero-visual" />
           </div>
         </div>
       </div>
