@@ -1,11 +1,10 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 interface HeroProps {
   onBookClick: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
+const Hero = ({ onBookClick }: HeroProps) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -15,16 +14,16 @@ const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
         delayChildren: 0.1,
       },
     },
-  };
+  } as const;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
     },
-  };
+  } as const;
 
   return (
     <section className="hero-section-new">

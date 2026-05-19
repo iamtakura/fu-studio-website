@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface PackagesOverlayProps {
@@ -6,7 +6,7 @@ interface PackagesOverlayProps {
   onClose: () => void;
 }
 
-const PackagesOverlay: React.FC<PackagesOverlayProps> = ({ isOpen, onClose }) => {
+const PackagesOverlay = ({ isOpen, onClose }: PackagesOverlayProps) => {
   // Focus trapping and Esc key handling
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -30,17 +30,17 @@ const PackagesOverlay: React.FC<PackagesOverlayProps> = ({ isOpen, onClose }) =>
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.4 } },
     exit: { opacity: 0, transition: { duration: 0.3 } },
-  };
+  } as const;
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { 
       opacity: 1, 
       scale: 1, 
-      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } // Custom bezier
+      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
     },
     exit: { opacity: 0, scale: 0.95, transition: { duration: 0.3 } },
-  };
+  } as const;
 
   return (
     <AnimatePresence>
@@ -78,9 +78,9 @@ const PackagesOverlay: React.FC<PackagesOverlayProps> = ({ isOpen, onClose }) =>
                   </div>
                 </div>
                 <ul className="feature-list">
-                  <li><span className="check">○</span> Access to 1 rotating concept</li>
-                  <li><span className="check">○</span> Bring your own tech</li>
-                  <li><span className="check">○</span> Standard props</li>
+                  <li><span className="check">○</span>Access to 1 rotating concept</li>
+                  <li><span className="check">○</span>Bring your own tech</li>
+                  <li><span className="check">○</span>Standard props</li>
                 </ul>
               </div>
 
@@ -93,10 +93,10 @@ const PackagesOverlay: React.FC<PackagesOverlayProps> = ({ isOpen, onClose }) =>
                   </div>
                 </div>
                 <ul className="feature-list">
-                  <li><span className="check active">●</span> Access to 2 concepts</li>
-                  <li><span className="check active">●</span> In-house professional photographer</li>
-                  <li><span className="check active">●</span> Advanced lighting kit access</li>
-                  <li><span className="check active">●</span> 2 hours</li>
+                  <li><span className="check active">●</span>Access to 2 concepts</li>
+                  <li><span className="check active">●</span>In-house professional photographer</li>
+                  <li><span className="check active">●</span>Advanced lighting kit access</li>
+                  <li><span className="check active">●</span>2 hours</li>
                 </ul>
               </div>
 
@@ -109,10 +109,10 @@ const PackagesOverlay: React.FC<PackagesOverlayProps> = ({ isOpen, onClose }) =>
                   </div>
                 </div>
                 <ul className="feature-list">
-                  <li><span className="check">○</span> Full studio exclusivity</li>
-                  <li><span className="check">○</span> All concept backdrops</li>
-                  <li><span className="check">○</span> Full salon access (hair, makeup, lash)</li>
-                  <li><span className="check">○</span> Half-day booking</li>
+                  <li><span className="check">○</span>Full studio exclusivity</li>
+                  <li><span className="check">○</span>All concept backdrops</li>
+                  <li><span className="check">○</span>Full salon access (hair, makeup, lash)</li>
+                  <li><span className="check">○</span>Half-day booking</li>
                 </ul>
               </div>
             </div>

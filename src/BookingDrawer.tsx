@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface BookingDrawerProps {
@@ -6,7 +6,7 @@ interface BookingDrawerProps {
   onClose: () => void;
 }
 
-const BookingDrawer: React.FC<BookingDrawerProps> = ({ isOpen, onClose }) => {
+const BookingDrawer = ({ isOpen, onClose }: BookingDrawerProps) => {
   const drawerRef = useRef<HTMLDivElement>(null);
   const [selectedTier, setSelectedTier] = useState<string>('Standard');
 
@@ -34,16 +34,16 @@ const BookingDrawer: React.FC<BookingDrawerProps> = ({ isOpen, onClose }) => {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.5 } },
     exit: { opacity: 0, transition: { duration: 0.4 } },
-  };
+  } as const;
 
   const drawerVariants = {
     hidden: { x: '100%' },
     visible: { 
       x: 0, 
-      transition: { type: 'spring', damping: 25, stiffness: 200, duration: 0.5 } 
+      transition: { type: 'spring' as const, damping: 25, stiffness: 200, duration: 0.5 } 
     },
-    exit: { x: '100%', transition: { duration: 0.4, ease: 'easeInOut' } },
-  };
+    exit: { x: '100%', transition: { duration: 0.4, ease: 'easeInOut' as const } },
+  } as const;
 
   return (
     <AnimatePresence>
