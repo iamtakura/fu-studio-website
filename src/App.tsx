@@ -14,6 +14,7 @@ function App() {
   const [isPackagesOpen, setIsPackagesOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -23,15 +24,26 @@ function App() {
       <header>
         <div className="container nav-container">
           <div className="logo">FU STUDIO</div>
-          <nav className="nav-links">
-            <a href="#home">Home</a>
-            <a href="#concepts">Concepts</a>
-            <a href="#overview">Overview</a>
-            <a href="#testimonials">Testimonials</a>
-          </nav>
-          <div className="nav-utils">
-            <a href="#contact">Contact Us</a>
-            <button onClick={() => setIsBookingOpen(true)} className="btn btn-ghost">Book a Session</button>
+          <button
+            className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+            <nav className="nav-links">
+              <a href="#home" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+              <a href="#concepts" onClick={() => setIsMobileMenuOpen(false)}>Concepts</a>
+              <a href="#overview" onClick={() => setIsMobileMenuOpen(false)}>Overview</a>
+              <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)}>Testimonials</a>
+            </nav>
+            <div className="nav-utils">
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+              <button onClick={() => { setIsBookingOpen(true); setIsMobileMenuOpen(false); }} className="btn btn-ghost">Book a Session</button>
+            </div>
           </div>
         </div>
       </header>
